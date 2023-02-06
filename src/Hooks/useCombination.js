@@ -22,7 +22,6 @@ export const useCombination = () => {
             } else {
                 result.push(newResult);
                 setCombination(result)
-                console.log(newResult)
             }
         }
     }

@@ -1,3 +1,4 @@
+import { useEffect } from "react"
 import { usePagination } from "../Hooks/usePagination"
 
 export const ResultBox = () => {
