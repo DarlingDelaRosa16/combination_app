@@ -20,7 +20,7 @@ export const useCombination = () => {
             if (n > 1) {
                 combinations(newArrList, n - 1, result, newResult);
             } else {
-                result.push(newResult);
+                result.push(newResult.join("-"));
                 setCombination(result)
             }
         }

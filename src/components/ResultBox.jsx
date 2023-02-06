@@ -8,13 +8,13 @@ export const ResultBox = () => {
     return (
         <>
             <div className='col-12 border result_box mt-2 rounded '>
-                <ol className="listOfItems">
+                <ul className="listOfItems">
                    {
-                    items.map((item, index) => (
-                        <li key={index}>{ item }</li>
-                    ))
+                        items.map((item, index) => (
+                            <li key={index}>{ item }</li>
+                        ))
                    }
-                </ol>
+                </ul>
             </div>
 
             <nav aria-label="Page navigation ">
