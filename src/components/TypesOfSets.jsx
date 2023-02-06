@@ -3,11 +3,10 @@ import { NumberContext } from "../context/NumberContext"
 
 export const TypesOfSets = () => {
 
-    const {setNumbers, setSets} = useContext(NumberContext)
+    const {setSets} = useContext(NumberContext)
 
     const setsOptions = (number)=> {
         setSets(number)
-        setNumbers([])
     }
     
     return (
@@ -23,12 +22,12 @@ export const TypesOfSets = () => {
                         </button>
                     </li>
                     <li>
-                        <button className="dropdown-item" onClick={()=>setsOptions(3)}>
+                        <button className="dropdown-item" onClick={()=>setsOptions(6)}>
                             LotoMax
                         </button>
                     </li>
                     <li>
-                        <button className="dropdown-item" onClick={()=>setsOptions(2)}>
+                        <button className="dropdown-item" onClick={()=>setsOptions(4)}>
                             LotoPool
                         </button>
                     </li>

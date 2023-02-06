@@ -5,7 +5,7 @@
 } 
 
 .combinationAPP {
-    background-color: aliceblue;
+    background-color: rgb(255, 255, 255);
     border-radius: 5px;
     width: 80%;
     padding: 10px;
@@ -17,4 +17,18 @@
 
 .result_box{
     height: 200px;
+}
+.btnSubmit {
+    margin: 0px 6px;
+    padding: auto;
+}
+
+.listOfItems{
+    width: 90%;
+    height: 180px;
+    display: grid;
+    margin-left: 20px;
+    margin-top: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr) );
+    grid-template-rows: auto;
 }

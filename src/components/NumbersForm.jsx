@@ -1,5 +1,4 @@
 import { useForm } from "../Hooks/useForm"
-import "./NumbersForm.css"
 
 export const NumbersForm = () => {
 

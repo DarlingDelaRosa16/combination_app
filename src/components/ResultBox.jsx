@@ -1,30 +1,53 @@
-import { useContext } from "react"
-import { NumberContext } from "../context/NumberContext"
-import { useCombination } from "../Hooks/useCombination"
+import { usePagination } from "../Hooks/usePagination"
 
 export const ResultBox = () => {
 
-    const { printCombination } = useCombination() 
-    const {numbers, sets} = useContext(NumberContext)
-
-    
-    const createCombinations = ()=>{
-        printCombination(numbers, numbers.length, sets);
-    } 
+    const {items, nextHandlePage, prevHandlePage, currentPage, firstCombinations} = usePagination()
 
     return (
         <>
-        <div className='col-12 border result_box mt-2 rounded'>
-            <ol>
+            <div className='col-12 border result_box mt-2 rounded '>
+                <ol className="listOfItems">
+                   {
+                    items.map((item, index) => (
+                        <li key={index}>{ item }</li>
+                    ))
+                   }
+                </ol>
+            </div>
 
-            </ol>
-        </div>
-        <button 
-            className="btn btn-outline-primary mt-2"
-            onClick={createCombinations}
-        >
-            crear combinanciones
-        </button>
+            <nav aria-label="Page navigation ">
+                <ul className="pagination mt-2 mb-1">
+                    
+                    <li className="page-item">
+                        <button 
+                            className="page-link"
+                            onClick={prevHandlePage}
+                        >
+                            Anterior
+                        </button>
+                    </li>
+
+                    <li className=" page-link"> {currentPage}</li>
+                    
+                    <li className="page-item">
+                        <button 
+                            className="page-link"
+                            onClick={nextHandlePage}
+                        >
+                            Siguiente
+                        </button>
+                    </li>
+                
+                </ul>
+            </nav>
+
+            <button
+                className="btn btn-outline-primary"
+                onClick={()=>firstCombinations()}
+            >
+                crear combinanciones
+            </button>
         </>
     )
 }
