@@ -9,7 +9,7 @@ export const App = () => {
   return (
     <div className="container">
       <div className='combinationAPP'>
-        <h3>Combinaciones</h3>
+        <h3><i>Combinaciones</i></h3>
         <div className=' d-flex justify-content-between'> 
           <NumbersForm />
           <TypesOfSets />

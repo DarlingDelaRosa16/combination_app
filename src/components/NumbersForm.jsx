@@ -13,14 +13,14 @@ export const NumbersForm = () => {
                     className='form-control'
                     type="text"
                     onChange={onInputChange}
-                    placeholder="Numeros"
+                    placeholder="Ingresa numeros"
                 />
 
                 <button
                     className='btn btn-outline-primary btnSubmit'
                     type="submit"
                 >
-                    enviar
+                    Agregar
                 </button>
         </form>
     )

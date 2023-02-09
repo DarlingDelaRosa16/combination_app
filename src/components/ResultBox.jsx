@@ -1,13 +1,12 @@
-import { useEffect } from "react"
 import { usePagination } from "../Hooks/usePagination"
 
 export const ResultBox = () => {
 
-    const {items, nextHandlePage, prevHandlePage, currentPage, firstCombinations} = usePagination()
+    const {items, nextHandlePage, prevHandlePage, currentPage, createCombinations, itemsPerPage} = usePagination()
 
     return (
         <>
-            <div className='col-12 border result_box mt-2 rounded '>
+            <div className='col-12 border result_box mt-2 rounded'>
                 <ul className="listOfItems">
                    {
                         items.map((item, index) => (
@@ -45,9 +44,9 @@ export const ResultBox = () => {
 
             <button
                 className="btn btn-outline-primary"
-                onClick={()=>firstCombinations()}
+                onClick={()=> createCombinations()}
             >
-                crear combinanciones
+                Crear combinanciones
             </button>
         </>
     )

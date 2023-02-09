@@ -29,6 +29,19 @@
     display: grid;
     margin-left: 20px;
     margin-top: 20px;
-    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr) );
+    grid-template-columns: repeat(3, minmax(auto, 1fr) );
     grid-template-rows: auto;
 }
+
+.dropdown-item:hover{
+    color: white;
+    background-color:#0d6efd;
+}
+
+.alert{
+    text-align: center;
+    margin: 5px 0px;
+    padding: 0px 3px 0px 3px;
+    color: red;
+}
+

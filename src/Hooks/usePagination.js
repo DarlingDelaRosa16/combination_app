@@ -2,29 +2,32 @@ import { useContext, useEffect, useState } from "react"
 import { NumberContext } from "../context/NumberContext"
 import { useCombination } from "./useCombination";
 
-const inicialState = 0
 export const usePagination = () => {
 
-
-  const itemsPerPage = 20;
-
-  const { combination } = useContext(NumberContext)
-  const { combinations } = useCombination(inicialState)
-  const { numbers, sets } = useContext(NumberContext)
+  const itemsPerPage = 8;
+  const { combination, setAlertText, numbers, sets  } = useContext(NumberContext)
+  const { combinations } = useCombination(0)
 
   const [items, setItems] = useState([])
   const [currentPage, setCurrentPage] = useState(0)
 
-  const firstCombinations = () => {
-    if (numbers.length < 1) return
-    combinations(numbers, sets, []);
-    setItems([...combination].splice(0, itemsPerPage))
-  }
   useEffect(() => {
     setItems([...combination].splice(currentPage, itemsPerPage))
   }, [combination])
 
+  const createCombinations = () => {
+    if (numbers.length < 1 || numbers.length < sets) {
+      setAlertText(`Ingresa mas numeros para crear combinaciones de ${sets}`)
+      return
+    }
+    setCurrentPage(0)
+    setAlertText('')
+    combinations(numbers, sets, []);
+    setItems([...combination].splice(0, itemsPerPage))
+  }
+
   const nextHandlePage = () => {
+    setAlertText('')
     if (numbers.length < 1) return
     let nextPage = currentPage + 1
     const numbIndex = nextPage * itemsPerPage
@@ -36,6 +39,7 @@ export const usePagination = () => {
   }
 
   const prevHandlePage = () => {
+    setAlertText('')
     if (numbers.length < 1) return
     let prevPage = currentPage - 1
     const numbIndex = prevPage * itemsPerPage
@@ -47,9 +51,10 @@ export const usePagination = () => {
   }
 
   return {
-    firstCombinations,
     currentPage,
+    createCombinations,
     items,
+    itemsPerPage,
     nextHandlePage,
     prevHandlePage,
   }

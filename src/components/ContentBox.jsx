@@ -18,7 +18,7 @@ export const ContentBox = () => {
                         key={item}
                         onClick={()=>removeNumber(item)}
                     > 
-                        {item} 
+                        {item}
                     </button>
                 ))
             }

@@ -5,9 +5,9 @@ import { NumberContext } from './NumberContext'
 export const NumberProvider = ({ children }) => {
 
     const [numbers, setNumbers] = useState([])
-    const [sets, setSets] = useState(4)
+    const [sets, setSets] = useState(2)
     const [combination, setCombination] = useState([])
-
+    const [alertText, setAlertText] = useState('')
 
     return (
         <NumberContext.Provider value={{
@@ -16,7 +16,9 @@ export const NumberProvider = ({ children }) => {
             sets,
             setSets,
             combination,
-            setCombination
+            setCombination,
+            alertText,
+            setAlertText
         }} >
             {children}
         </NumberContext.Provider>
