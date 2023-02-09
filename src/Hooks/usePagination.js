@@ -5,7 +5,7 @@ import { useCombination } from "./useCombination";
 export const usePagination = () => {
 
   const itemsPerPage = 8;
-  const { combination, setAlertText, numbers, sets  } = useContext(NumberContext)
+  const { combination, setAlertText, numbers, sets} = useContext(NumberContext)
   const { combinations } = useCombination(0)
 
   const [items, setItems] = useState([])
@@ -17,7 +17,7 @@ export const usePagination = () => {
 
   const createCombinations = () => {
     if (numbers.length < 1 || numbers.length < sets) {
-      setAlertText(`Ingresa mas numeros para crear combinaciones de ${sets}`)
+      setAlertText(`Agrega mas números para crear combinaciones de ${sets}`)
       return
     }
     setCurrentPage(0)

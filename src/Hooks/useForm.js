@@ -22,7 +22,7 @@ export const useForm = ( initialForm = {} ) => {
         e.preventDefault()
         
         if(formState.number.length < 1 ){
-            setAlertText('Debes Ingresar números ')
+            setAlertText('Debes Ingresar números')
             return
         }
 
