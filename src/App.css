@@ -1,47 +1,99 @@
- .container{
+.container {
     display: grid;
-    margin-top: 200px;
+    margin-top: 10vh;
     place-items: center;
-} 
+}
 
 .combinationAPP {
-    background-color: rgb(255, 255, 255);
     border-radius: 5px;
     width: 80%;
     padding: 10px;
     box-shadow: rgba(37, 37, 38, 0.4) 0px 2px 4px, rgba(102, 102, 104, 0.3) 0px 7px 13px -3px, rgba(37, 37, 38, 0.4) 0px -3px 0px inset;
 }
-.content_box{
-    height: 50px;
+
+.content_box {
+    display: flex;
+    min-height: 40px;
+    padding: 5px 5px 5px 0px;
+    flex-wrap: wrap;
 }
 
-.result_box{
+.btn_content_box{
+    margin: 0px 0px 5px 5px;
+    height: 40px;
+}
+
+.result_box {
+    display: grid;
+    place-items: center;
     height: 200px;
 }
+
 .btnSubmit {
     margin: 0px 6px;
     padding: auto;
 }
 
-.listOfItems{
-    width: 90%;
-    height: 180px;
+.listOfItems {
     display: grid;
-    margin-left: 20px;
-    margin-top: 20px;
-    grid-template-columns: repeat(3, minmax(auto, 1fr) );
+    width: 100%;
+    padding-top: 10px;
+    height: 200px;
+    grid-template-columns: repeat(3, minmax(auto, 1fr));
     grid-template-rows: auto;
 }
 
-.dropdown-item:hover{
+.dropdown-item:hover {
     color: white;
-    background-color:#0d6efd;
+    background-color: #0d6efd;
 }
 
-.alert{
+.alert {
     text-align: center;
     margin: 5px 0px;
     padding: 0px 3px 0px 3px;
     color: red;
 }
 
+@media (width <=440px) {
+    .container {
+        margin-top: 0vh;
+        height: 100vh;
+    }
+
+    .combinationAPP {
+        border-radius: 0px;
+        width: 100%;
+        padding: 0px;
+        box-shadow: none;
+    }
+
+    .content_box {
+        height: 9vh;
+        overflow: scroll;
+    }
+
+    .content_box::-webkit-scrollbar {
+        width: 3px;
+    }
+
+    .content_box::-webkit-scrollbar-thumb {
+        background-color: darkgrey;
+        border-radius: 10px;
+    }
+
+    .result_box {
+        height: 65vh;
+    }
+
+    .listOfItems {
+        width: 100%;
+        padding-top: 0px;
+        height: 65vh;
+        grid-template-columns: none;
+    }
+
+    .alert {
+        display: none;
+    }
+}

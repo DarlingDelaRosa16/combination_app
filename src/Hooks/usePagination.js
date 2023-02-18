@@ -4,7 +4,7 @@ import { useCombination } from "./useCombination";
 
 export const usePagination = () => {
 
-  const itemsPerPage = 8;
+  const itemsPerPage = 9;
   const { combination, setAlertText, numbers, sets} = useContext(NumberContext)
   const { combinations } = useCombination(0)
 

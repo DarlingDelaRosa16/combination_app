@@ -10,11 +10,11 @@ export const ContentBox = () => {
     }
 
     return (
-        <div className='col-12 border content_box mt-2 rounded d-flex p-2'>
+        <div className='col-12 border content_box mt-2 rounded'>
             {
                 numbers.map(item => (
                     <button 
-                        className='btn btn-secondary ms-1'
+                        className='btn btn-secondary btn_content_box'
                         key={item}
                         onClick={()=>removeNumber(item)}
                     > 

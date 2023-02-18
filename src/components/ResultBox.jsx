@@ -6,7 +6,7 @@ export const ResultBox = () => {
 
     return (
         <>
-            <div className='col-12 border result_box mt-2 rounded'>
+            <div className='col-12 border result_box rounded mt-2'>
                 <ul className="listOfItems">
                    {
                         items.map((item, index) => (
