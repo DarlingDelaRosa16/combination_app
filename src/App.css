@@ -13,13 +13,14 @@
 
 .content_box {
     display: flex;
-    min-height: 40px;
-    padding: 5px 5px 5px 0px;
     flex-wrap: wrap;
+    min-height: 50px;
+    padding-top: 5px;
 }
 
 .btn_content_box{
     margin: 0px 0px 5px 5px;
+    width: 40px;
     height: 40px;
 }
 
@@ -66,20 +67,6 @@
         width: 100%;
         padding: 0px;
         box-shadow: none;
-    }
-
-    .content_box {
-        height: 9vh;
-        overflow: scroll;
-    }
-
-    .content_box::-webkit-scrollbar {
-        width: 3px;
-    }
-
-    .content_box::-webkit-scrollbar-thumb {
-        background-color: darkgrey;
-        border-radius: 10px;
     }
 
     .result_box {

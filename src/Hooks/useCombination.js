@@ -28,6 +28,7 @@ export const useCombination = () => {
                 } else {
                     result.push(newResult.sort().join("-"));
                     const noPermutationArr = Array.from(new Set(result.map(JSON.stringify)), JSON.parse)
+                    noPermutationArr.sort(()=> Math.random() - 0.5)
                     setCombination(noPermutationArr)
                 }
             }

@@ -2,7 +2,7 @@ import { usePagination } from "../Hooks/usePagination"
 
 export const ResultBox = () => {
 
-    const {items, nextHandlePage, prevHandlePage, currentPage, createCombinations, itemsPerPage} = usePagination()
+    const {items, nextHandlePage, prevHandlePage, currentPage, createCombinations} = usePagination()
 
     return (
         <>
@@ -10,12 +10,12 @@ export const ResultBox = () => {
                 <ul className="listOfItems">
                    {
                         items.map((item, index) => (
-                            <li key={index}>{ item }</li>
+                            <li key={index} >{ item }</li>
                         ))
                    }
                 </ul>
             </div>
-
+            
             <nav aria-label="Page navigation ">
                 <ul className="pagination mt-2 mb-1">
                     
