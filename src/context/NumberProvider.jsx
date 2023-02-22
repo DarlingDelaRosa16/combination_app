@@ -8,6 +8,8 @@ export const NumberProvider = ({ children }) => {
     const [sets, setSets] = useState(2)
     const [combination, setCombination] = useState([])
     const [alertText, setAlertText] = useState('')
+    const [currentPage, setCurrentPage] = useState(0)
+
 
     return (
         <NumberContext.Provider value={{
@@ -18,7 +20,9 @@ export const NumberProvider = ({ children }) => {
             combination,
             setCombination,
             alertText,
-            setAlertText
+            setAlertText,
+            currentPage,
+            setCurrentPage
         }} >
             {children}
         </NumberContext.Provider>

@@ -3,10 +3,16 @@ import { NumberContext } from '../context/NumberContext'
 
 export const ContentBox = () => {
 
-    const { numbers, setNumbers } = useContext(NumberContext)
+    const { numbers, setNumbers, setCombination, setCurrentPage} = useContext(NumberContext)
 
     const removeNumber = (item) => {
         setNumbers(numbers.filter(num => num !== item))
+    }
+
+    const removeAllNumbers = ()=> {
+        setCurrentPage(0)
+        setNumbers([])
+        setCombination([])
     }
 
     return (
@@ -27,9 +33,9 @@ export const ContentBox = () => {
             </div>
             <button 
                 className='btn btn-outline-secondary mt-1'
-                onClick={()=> setNumbers([])}
+                onClick={removeAllNumbers}
             >
-                Borrar todo
+                Limpiar todo
             </button>
         </>
     )
