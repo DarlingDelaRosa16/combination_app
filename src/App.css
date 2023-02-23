@@ -27,7 +27,7 @@
 .result_box {
     display: grid;
     place-items: center;
-    height: 200px;
+    height: 180px;
 }
 
 .btnSubmit {
@@ -70,7 +70,7 @@
     }
 
     .result_box {
-        height: 65vh;
+        height: 62vh;
     }
 
     .listOfItems {

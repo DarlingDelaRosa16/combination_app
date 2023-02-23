@@ -1,9 +1,12 @@
 import { useContext } from 'react'
 import { NumberContext } from '../context/NumberContext'
+import { usePagination } from '../Hooks/usePagination'
 
 export const ContentBox = () => {
 
     const { numbers, setNumbers, setCombination, setCurrentPage} = useContext(NumberContext)
+    const { createCombinations } = usePagination()
+
 
     const removeNumber = (item) => {
         setNumbers(numbers.filter(num => num !== item))
@@ -36,6 +39,13 @@ export const ContentBox = () => {
                 onClick={removeAllNumbers}
             >
                 Limpiar todo
+            </button>
+
+            <button
+                className="btn btn-outline-primary mt-1 ms-1"
+                onClick={() => createCombinations()}
+            >
+                Crear combinanciones
             </button>
         </>
     )

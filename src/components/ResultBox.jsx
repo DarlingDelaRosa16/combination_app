@@ -4,7 +4,7 @@ import { usePagination } from "../Hooks/usePagination"
 
 export const ResultBox = () => {
 
-    const { items, nextHandlePage, prevHandlePage, createCombinations } = usePagination()
+    const { items, nextHandlePage, prevHandlePage } = usePagination()
     const { currentPage } = useContext(NumberContext)
 
 
@@ -46,12 +46,7 @@ export const ResultBox = () => {
                 </ul>
             </nav>
 
-            <button
-                className="btn btn-outline-primary"
-                onClick={() => createCombinations()}
-            >
-                Crear combinanciones
-            </button>
+            
         </>
     )
 }
