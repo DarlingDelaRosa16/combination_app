@@ -5,9 +5,8 @@ import { useCombination } from "./useCombination";
 export const usePagination = () => {
 
   const itemsPerPage = 9;
-  const { combination, setAlertText, numbers, sets, setCurrentPage, currentPage } = useContext(NumberContext)
-  const { combinations } = useCombination(0)
-
+  const { combination, setAlertText, numbers, sets, setCurrentPage, currentPage, setCombination } = useContext(NumberContext)
+  const { printCombination, endArray } = useCombination()
   const [items, setItems] = useState([])
 
   useEffect(() => {
@@ -21,7 +20,8 @@ export const usePagination = () => {
     }
     setCurrentPage(0)
     setAlertText('')
-    combinations(numbers, sets, []);
+    printCombination(numbers, numbers.length, sets);
+    setCombination(endArray)
     setItems([...combination].splice(0, itemsPerPage))
   }
 
@@ -48,7 +48,6 @@ export const usePagination = () => {
     setItems([...combination].splice(numbIndex, itemsPerPage))
     setCurrentPage(prevPage)
   }
-  console.log(currentPage)
 
   return {
     createCombinations,
