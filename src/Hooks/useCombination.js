@@ -1,5 +1,3 @@
-import { useContext } from "react";
-import { NumberContext } from "../context/NumberContext";
 
 export const useCombination = () => {
 
@@ -27,7 +25,7 @@ export const useCombination = () => {
         let data = new Array(r);
         combinationUtil(arr, data, 0, n - 1, 0, r);
     }
-    
+
     return {
         printCombination,
         endArray
