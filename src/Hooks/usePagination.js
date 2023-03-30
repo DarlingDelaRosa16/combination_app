@@ -6,7 +6,7 @@ export const usePagination = () => {
 
   const itemsPerPage = 9;
   const { combination, setAlertText, numbers, sets, setCurrentPage, currentPage, setCombination } = useContext(NumberContext)
-  const { printCombination, endArray } = useCombination()
+  const { GenerateCombinations } = useCombination()
   const [items, setItems] = useState([])
 
   useEffect(() => {
@@ -20,8 +20,8 @@ export const usePagination = () => {
     }
     setCurrentPage(0)
     setAlertText('')
-    printCombination(numbers, numbers.length, sets);
-    setCombination(endArray)
+    const com = GenerateCombinations(numbers, sets);
+    setCombination(com)
     setItems([...combination].splice(0, itemsPerPage))
   }
 

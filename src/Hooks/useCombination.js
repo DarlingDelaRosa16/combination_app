@@ -1,33 +1,43 @@
 
 export const useCombination = () => {
 
-    let endArray = [];
-    function combinationUtil(arr, data, start, end, index, r) {
-
-        if (endArray.length == 2000) return;
-
-        if (index == r) {
-            let tempArr = [];
-            for (let j = 0; j < r; j++) {
-                tempArr[j] = data[j];
-            }
-            tempArr.sort((x) => Math.random() - 0.5);
-            endArray.push(tempArr.join("-"));
-        }
-
-        for (let i = start; i <= end && end - i + 1 >= r - index; i++) {
-            data[index] = arr[i];
-            combinationUtil(arr, data, i + 1, end, index + 1, r);
-        }
+    
+    const GenerateCombinations = (userArray, desiredCombLength) => {
+        const numCombinations = factorial(userArray.length) / (factorial(desiredCombLength) * factorial(userArray.length - desiredCombLength));
+        let maxGenerations = 300;
+        let generatedCombinations = [];
+    
+        if(numCombinations < maxGenerations ) maxGenerations = numCombinations;
+        
+        do{
+            let combination = [];
+            do{
+                let randomPickFromArray = userArray[Math.round(Math.random() * (userArray.length-1)) ]
+                if(!combination.some( x => x == randomPickFromArray))
+                    combination.push(randomPickFromArray);
+            }while(combination.length < desiredCombLength);
+            generatedCombinations.push(combination.join('-'));
+        }while(generatedCombinations.length < maxGenerations)
+        
+        
+        return generatedCombinations;
     }
 
-    function printCombination(arr, n, r) {
-        let data = new Array(r);
-        combinationUtil(arr, data, 0, n - 1, 0, r);
-    }
+    const factorial = (num) =>{
+        if (num === 0) {
+          return 1;
+        } else {
+          return num * factorial(num - 1);
+        }
+      }
 
     return {
-        printCombination,
-        endArray
+        GenerateCombinations
     }
 }
+
+
+
+
+
+
